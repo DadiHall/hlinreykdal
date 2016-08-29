@@ -23,6 +23,7 @@
 
 @import "footer";
 @import "navbar";
+@import "pages";
 
 
 
@@ -44,5 +45,88 @@ body{
     margin: 0;
   background-color: #fff;
     text-decoration: none;
+
+}
+
+
+/***********************************************/
+
+.social-share-button-facebook {
+    position: relative;
+        background: none;
+        margin-right: 5px;
+
+}
+
+.social-share-button-facebook:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    width: 16px;
+    height: 16px;
+    
+     content: "\f09a";
+     color: #555;
+
+     font-size: 1.5em;
+
+}
+
+
+.social-share-button-twitter {
+    position: relative;
+        background: none;
+        margin-right: 10px;
+
+}
+
+.social-share-button-twitter:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    width: 16px;
+    height: 16px;
+    
+     content: "\f099";
+     color: #555;
+
+     font-size: 1.5em;
+
+}
+
+
+.social-share-button-google_plus {
+    position: relative;
+        background: none;
+        margin-right: 15px;
+
+}
+
+.social-share-button-google_plus:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    width: 16px;
+    height: 16px;
+     content: "\f0d5";
+     color: #555;
+
+     font-size: 1.5em;
+
+}
+
+
+.social-share-button-pinterest {
+    position: relative;
+        background: none;
+
+}
+
+.social-share-button-pinterest:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    width: 16px;
+    height: 16px;
+     content: "\f0d2";
+     color: #555;
+
+     font-size: 1.5em;
 
 }

@@ -1,0 +1,26 @@
+<h1>Your Order has been shipped</h1>
+
+<h3>Dear <%= @order.name %> </h3>
+
+
+<p>
+ Your order has been shipped to your address, please contact store@hlinreykdal.com for further information.
+</p>
+
+<p> Thank You </p>
+
+<% @order.product_items.each do |item| %>
+	<ul>
+		<li>
+			<%= item.product.title %>&times;<%= item.quantity %>
+		</li>
+
+		
+	</ul>
+<% end %>
+
+<p> Thank You </p>
+
+
+
+

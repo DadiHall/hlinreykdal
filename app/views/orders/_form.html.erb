@@ -34,16 +34,19 @@
 			<%= f.text_field :city, size: 40, class: 'form-control' %>
 		</div>
 	</div>	
-
+	
 	<div class="form-group">
 		<div class="col-md-10">
-			<%= u.country_select :country, { priority_countries: [ "IS", "US", "DE", "ES", "PT" ]}, { class: "form-control" }%></p>
+			<%= f.label :country %>
+			<%= f.country_select :country, { priority_countries: [ "IS", "US", "DE", "ES", "PT" ]}, { class: "form-control" }%>
 		</div>
 	</div>	
 
 
 	<div class="form-group">
+		<div id="payment-form"></div>
 		<div class="col-md-10">
+			<br>
 			<%= f.submit 'Place Order' %>
 		
 		</div>

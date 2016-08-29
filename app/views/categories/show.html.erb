@@ -24,14 +24,14 @@
           <h5><%= link_to product.title, product %></h5>
           <p><%= product.description %></p>
           <p class="price"> <%= number_to_currency(product.price_usd, :precision => 0 )%> | <%= number_to_currency(product.price_isl.to_i, :unit => "kr", :precision => 0) %></p>
-          <p><%#= social_share_button_tag(products.title) %></p>
+           <p><%= social_share_button_tag(product.title) %></p>
 
         </div>
       
 
       </div>
     <% end %>
- 
+
   </div>
 </div>
 

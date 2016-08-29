@@ -1,3 +1,117 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* INDEX PAGE */
+  
+#index_header {
+    background: url('front_bud_full_1200_500.jpg');
+    min-height: 500px;
+    max-width: 100%;
+    background-repeat:no-repeat;
+    
+    background-size: cover;
+    background-position: center top; 
+  
+   
+}
+
+.full_front_img{
+    margin: 40px 0px;
+     background: url('front_img_1200_500.jpg') ;
+    width: 100%;
+   height: auto ; /* ? */
+    background-repeat:no-repeat;
+    background-position: top center;
+    background-size: cover;  
+    background-position: center top; 
+    height: 520px;
+    vertical-align: text-bottom;
+}   
+
+/* IMAGE CAPTION THUMBMAILS */
+
+.center-block{
+
+    margin-bottom: 30px !important;
+}
+   
+ .caption {
+        width:100%;
+        bottom: .3rem;
+        position: absolute;
+        background:transparent;
+        }
+
+.thumbnails {
+
+       margin: auto 0;
+        border: 0 none;
+        box-shadow: none;
+        width: auto;
+        height: 100%
+
+
+
+    
+    }
+
+    .caption h4 {
+        color: #555;
+        margin-left: 40px;
+        margin-bottom: 40px;
+        -webkit-font-smoothing: antialiased;
+    }
+
+.thumbnails img {
+    max-height: 100%;
+    max-width: 100%;
+   
+}
+
+
+/* ABOUT PAGE */
+
+#about_head {
+    background: url('about/about12.png') ;
+    width: 110%;
+    height: auto ; /* ? */
+    background-repeat:no-repeat;
+    background-position: top center;
+    background-size: cover;  
+    background-position: center top; 
+    height: 780px 
+}
+
+#down_head_about {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background: url('about/about7.png') ;
+      height: auto ; /* ? */
+    background-repeat:no-repeat;
+    background-position: top center;
+    background-size: cover;  
+    background-position: center top; 
+    height: 500px;
+    width: 120%;
+
+}
+
+#bottom-head-about{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    background: url('about/about3.png') ;
+      height: auto ; /* ? */
+    background-repeat:no-repeat;
+    background-position: top center;
+    background-size: cover;  
+    background-position: center top; 
+    height: 350px;
+    width: 120%;
+
+}
+
+
+
+
+

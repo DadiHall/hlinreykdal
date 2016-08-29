@@ -1,11 +1,26 @@
 ActiveAdmin.register Order do
 
+	permit_params :shipped
+
+	after_update do |order|
+		OrderNotifier.shipped(@order).deliver if order.shipped
+
+	end
+
 	show do |order|
 
 		panel 'Customer Details' do
 			attributes_table_for order, :name, :email, :address, :city, :country, :created_at
 		end
 
+		panel 'Created ' do
+			"#{time_ago_in_words order.created_at} ago"
+		end
+
+
+		panel 'Shipped ' do
+			order.shipped
+		end
 
 		panel 'Order Details' do
 			table_for(order.product_items) do 
@@ -13,7 +28,7 @@ ActiveAdmin.register Order do
 					item.product.title
 				end
 				column 'Quantity' do |item|
-					item.quantity.title
+					item.quantity
 				end
 				column 'Price Isl' do |item|
 					number_to_currency item.total_price_isl
