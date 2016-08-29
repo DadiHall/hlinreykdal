@@ -2,10 +2,14 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :labels
-  resources :products
+  resources :products do
+    resources :product_items
+  end
+   
+   
 
   resources :carts
-  resources :product_items
+  
   resources :orders
 
   devise_for :admin_users, ActiveAdmin::Devise.config

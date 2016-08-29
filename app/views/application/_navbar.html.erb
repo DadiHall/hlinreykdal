@@ -77,15 +77,15 @@
 
                 <li class="dropdown full-width navbar-right cart-wrapper">
 
-                <%# if @cart.total_price_usd > 0 %>
-                    <%#= link_to @cart do %> 
+                <% if @cart.total_price_usd > 0 %>
+                    <%= link_to @cart do %> 
                         <i class="fa fa-shopping-cart"></i>
-                    <%#=  @cart.total_price_usd %>
-                    <%# end %>
+                    <%=  @cart.total_price_usd %>
+                    <% end %>
 
-                    <%# else %>
+                    <% else %>
                         <a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> $0.00</a>
-                    <%# end %>    
+                    <% end %>    
 
                 </li>
                 

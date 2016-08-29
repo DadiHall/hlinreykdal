@@ -1,15 +1,17 @@
 <div class="row product_top">
 
-<h3> Your Cart </h3>
-<div class="container ">
 
+<div class="container ">
+<h3> Your Cart </h3>
 <h2> Cart Details </h2>
 
 <br>
 
 <%= render 'carts/cart' %>
 <br>
-<h5>Total: <%= number_to_currency @cart.total_price %> </h5>
+<h5>Total: <%= number_to_currency(@cart.total_price_usd, :precision => 0)%> </h5>
+
+<h5>Total: <%= number_to_currency(@cart.total_price_isl.to_i, :unit => "ISkr ", :precision => 0) %> </h5>
 <br>
 	<%= button_to 'Checkout', new_order_path, method: :get %>
 <br>

@@ -6,8 +6,9 @@ class ProductItemsController < ApplicationController
 	before_action :set_product_item, only: [:show, :destroy]
 
 	def create
+		
 		@product = Product.find(params[:product_id])
-		@product_item = @cart.add_product(product.id)
+		@product_item = @cart.add_product(@product.id)
 		if @product_item.save
 			redirect_to root_url, notice:'Product added to Cart'
 		else
