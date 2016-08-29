@@ -1,0 +1,28 @@
+
+<div class="container-fluid">
+<div class="row product_top">
+ 
+<% products.each do |product| %>
+<div class="col-lg-3 col-sm-6 col-xs-12 center-block " >
+  
+   <%= image_tag product.image, height: "300", class: "img-responsive" %>
+ 
+
+  <div class="product_description">
+
+    <h5><%= link_to product.name, product %></h5>
+
+    <p><%= product.description %></p>
+    <p>In stock: <%#= product.stock_quantity %> items.</p>
+    <p class="price"> <%= number_to_currency product.price %></p>
+    <p><%#= social_share_button_tag(products.name) %></p>
+
+  </div>
+      
+
+  </div>
+ <% end %>
+ 
+  </div>
+  </div>
+ 

@@ -1,0 +1,53 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+  h5>a {
+    color: #555;
+
+  }
+
+    h5>a:hover{
+    color: #999;
+    text-decoration: none;
+  }
+
+
+
+#necklace_header {
+    
+    background-repeat:no-repeat;
+    background-position: top center;
+   
+    background-size: cover;  
+    
+    height: auto;
+    margin-bottom: 20px; 
+
+}
+
+
+
+ #necklace_header h1{
+	color: #999;
+	letter-spacing: .6em;
+	
+	padding-left: 20px;
+	font-size: 2em;
+	margin-top: 40px;
+
+}
+
+
+
+
+
+.product_top{
+    margin-top: 50px;
+    padding: 20px 0 20px 0;
+ 
+    margin-bottom: 40px;
+    
+}
+

@@ -1,0 +1,41 @@
+<header id="index_header">
+</header>
+<div class="row">
+	<div class="col-xs-12 col-md-12 full_front_img">
+	   
+	
+	</div>
+
+</div>
+
+
+
+  
+<div class="container-fluid">
+
+    
+      	<% @products.each_slice(3) do |products_group| %>
+      	<div class="row">
+      	  <% products_group.each do |category, products| %>
+      		
+  				<% products.each_with_index do |product, index| %>
+  					<% if index == 0 %>
+      					<div class="col-lg-4 col-sm-6 col-xs-12 center-block " >
+      				
+						<%= link_to category_path (category) do %>
+  							<%= image_tag product.image.url(:medium), class: "img-responsive" %>
+						<% end %>
+ 				<div class="caption">
+ 					<p><%= product.category.name %></p>
+ 				 </div> 
+ 				<% end %>
+ 				<% end %>
+ 				</div> 
+			<% end %>
+			</div>
+		<% end %>
+    
+	
+
+
+</div>

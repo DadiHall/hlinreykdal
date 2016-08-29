@@ -1,0 +1,36 @@
+
+/************************************************/
+/*   FOOTER  */
+
+#footer{
+    padding: 40px 0px;
+    border-top: 1px #eaeaea solid;
+}
+
+#footer .fa{
+    font-size: 2em;
+    margin-right: 0.5em;
+}
+
+#footer_nav > ul{
+
+    letter-spacing: .2em;
+}
+
+#footer_nav > ul >li {
+ 
+    text-transform: none;
+    text-decoration: none;
+    list-style: none;
+    letter-spacing: .2em;
+
+}
+
+#footer_nav > ul >li > a {
+    text-transform: none;
+    color: #555;
+    font-size: .8em;
+    margin: 5px 0px;
+    
+
+}

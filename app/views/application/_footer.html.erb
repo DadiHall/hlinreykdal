@@ -1,0 +1,56 @@
+<footer id="footer" class="footer">
+      <div class="row">
+        <div class="container-fluid">
+
+        <div class="col-xs-12 col-md-3 text-center">
+        
+        
+         <a href="https://www.instagram.com/hlinreykdalstudio/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+
+          <a href="https://www.facebook.com/Hl%C3%ADn-Reykdal-208910763506/?fref=ts"> <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+
+         <i class="fa fa-envelope" aria-hidden="true"></i>
+
+        </div>
+       
+         <div class="col-xs-12 col-md-3 text-center pull-right" id="footer_nav">
+            <ul>  
+                        <h5>Categories</h5>
+                         <% @categories.each do |category| %>
+                            <li><%= link_to category.name, category %></li>
+                        <% end %>  
+            </ul>
+           
+            </div>  
+            <div class="col-xs-12 col-md-3 text-center pull-right" id="footer_nav">
+                <ul>
+                      <h5>Labels</h5>
+                
+                       <% @labels.each do |label| %>
+                            <li><%= link_to label.label_name, label %></li>
+                        <% end %>   
+                              
+                </ul>   
+                    
+            </div>          
+            
+                
+              <div class="col-xs-12 col-md-3 text-center pull-right" id="footer_nav">
+
+              <h5>Info</h5>
+                    <ul>                   
+                         <li><%#= link_to "About", pages_about_path %></li>
+                        
+                        <li><%#= link_to "Stockists", stockists_path %></li> 
+                    
+                        
+                        <!--<li><a href="#">Location</a></li>-->
+                        
+                        <li><%#= link_to "Help", pages_help_path %></li> 
+                        
+                    </ul>
+             </div>
+        </div>
+        </div>
+      
+    </footer>
