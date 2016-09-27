@@ -5,8 +5,8 @@ require "capistrano/setup"
 require "capistrano/deploy"
 
 
-#set :rbenv_type, :user # or :system, depends on your rbenv setup
-#set :rbenv_ruby, '2.3.1'
+set :rbenv_type, :user # or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.3.1'
 
 # Include tasks from other gems included in your Gemfile
 #
@@ -25,7 +25,7 @@ require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano/rails'
 # require 'capistrano/rails/migrations'
-require 'capistrano/passenger'
+#require 'capistrano/passenger'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
