@@ -1,15 +1,19 @@
 <footer id="footer" class="footer">
+<div class="container-fluid">
       <div class="row">
-        <div class="container-fluid">
-
-        <div class="col-xs-12 col-md-3 text-center">
         
+
+        <div class="col-xs-12 col-md-3 text-center" id="footer_nav">
         
-         <a href="https://www.instagram.com/hlinreykdalstudio/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-
-          <a href="https://www.facebook.com/Hl%C3%ADn-Reykdal-208910763506/?fref=ts"> <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-
-         <i class="fa fa-envelope" aria-hidden="true"></i>
+      
+         <ul>
+         <li>Fiskislóð 75</li>
+          <li>101, Reykjavík</li>
+          <h5>Open</h5>
+          <li> Mon - Fri: 11-18 </li>
+          <li> Sat: 11-16 </li>
+          <li> Sun: Closed </li>
+          </ul>
 
         </div>
        
@@ -39,18 +43,30 @@
 
               <h5>Info</h5>
                     <ul>                   
-                         <li><%#= link_to "About", pages_about_path %></li>
+                         <li><%= link_to "About", about_path %></li>
                         
                         <li><%#= link_to "Stockists", stockists_path %></li> 
                     
                         
-                        <!--<li><a href="#">Location</a></li>-->
+                        <li><%= link_to "Location", location_path %></li>
                         
-                        <li><%#= link_to "Help", pages_help_path %></li> 
+                        <li><%= link_to "Help", help_path %></li> 
                         
                     </ul>
              </div>
+
+      </div>
+             <div class="row footer-bottom text-center">
+          <ul>
+            <li><a href="https://www.instagram.com/hlinreykdalstudio/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+
+            <li> <a href="https://www.facebook.com/Hl%C3%ADn-Reykdal-208910763506/?fref=ts"> <i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+
+            <li><i class="fa fa-envelope" aria-hidden="true"></i></li>
+          </ul>
         </div>
-        </div>
+    </div>
+
+       
       
     </footer>

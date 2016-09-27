@@ -16,14 +16,14 @@
       <div class="col-lg-3 col-sm-6 col-xs-12 center-block " >
 
   <%= link_to product_path (product) do %>
-                <%= image_tag product.image, class: "img-responsive" %>
+                <%= image_tag product.image.url(:medium), class: "img-responsive" %>
             <% end %>
 
         <div class="product_description">
 
           <h5><%= link_to product.title, product %></h5>
           <p><%= product.description %></p>
-          <p class="price"> <%= number_to_currency(product.price_usd, :precision => 0 )%> | <%= number_to_currency(product.price_isl.to_i, :unit => "kr", :precision => 0) %></p>
+          <p class="price"> <%= number_to_currency(product.price_usd, :unit => "€ ", :precision => 0 )%> | <%= number_to_currency(product.price_isl.to_i, :unit => "ISK ", :precision => 0) %></p>
            <p><%= social_share_button_tag(product.title) %></p>
 
         </div>

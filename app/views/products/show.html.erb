@@ -38,7 +38,7 @@
 
           <%# end %>
           <p> <%#= link_to 'Add to cart', product_items_path, method: :post %><i class="fa fa-shopping-cart"></i></p>
-          <%= button_to product_product_items_path( @product) do %>
+          <%= button_to product_product_items_path( @product), class: 'buttons' do %>
           <i class="fa fa-shopping-cart"></i>Add to Cart
          <% end %>
         </div>

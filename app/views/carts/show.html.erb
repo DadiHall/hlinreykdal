@@ -1,23 +1,37 @@
+<header id="necklace_header" class="img-responsive">
+
+
+  <img src="/assets/rand_headers/<%= @random_image%>", style='height:auto;width:100%;' >
+	
+	
+</header>
+
 <div class="row product_top">
 
 
-<div class="container ">
+<div class="container cart-container">
 <h3> Your Cart </h3>
-<h2> Cart Details </h2>
+<h4> Cart Details </h4>
 
 <br>
 
 <%= render 'carts/cart' %>
-<br>
-<h5>Total: <%= number_to_currency(@cart.total_price_usd, :precision => 0)%> </h5>
 
-<h5>Total: <%= number_to_currency(@cart.total_price_isl.to_i, :unit => "ISkr ", :precision => 0) %> </h5>
 <br>
-	<%= button_to 'Checkout', new_order_path, method: :get %>
+<hr>
 <br>
-<%= link_to 'Back', root_path %>
+<h5>Total: <%= number_to_currency(@cart.total_price_usd, :unit => "€ ", :precision => 0)%> </h5>
+
+<h5>Total: <%= number_to_currency(@cart.total_price_isl.to_i, :unit => "ISK ", :precision => 0) %> </h5>
 <br>
-<%= link_to 'Empty Your Cart', @cart, method: :delete, data: {confirm: 'Are You Sure?'} %>
+<%= link_to 'Back', root_path, class: 'pull-right cart-links' %>
+<br>
+<%= link_to 'Empty Your Cart', @cart, method: :delete, data: {confirm: 'Are You Sure?'}, class: 'pull-right cart-links' %>
+<hr>
+<br>
+	<%= button_to 'Checkout', new_order_path, method: :get, class: 'pull-right buttons' %>
+<br>
+
 
 </div>
 </div>

@@ -1,0 +1,54 @@
+<header id="necklace_header" class="img-responsive">
+
+
+  <img src="/assets/rand_headers/<%= @random_image%>", style='height:auto;width:100%;' >
+	
+	
+</header>
+
+
+<div class="container location-wrapp">
+
+	
+
+
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+
+    <ul>
+         <li>Fiskislóð 75</li>
+          <li>101, Reykjavík</li>
+          <br>
+          <h5>Opening hours</h5>
+          <li> Mon - Fri: 11-18 </li>
+          <li> Sat: 11-16 </li>
+          <li> Sun: Closed </li>
+     </ul>
+
+    <h3>Store location</h3>
+    <div id="map"></div>
+    
+	
+
+</div>
+
+<script>
+      function initMap() {
+        var uluru = {lat: 64.157200, lng:  -21.942253};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-nF4F-Pl50CWnt1qVpWqS5CpbKUwEga0&callback=initMap">
+    </script>

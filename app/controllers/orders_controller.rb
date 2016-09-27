@@ -9,6 +9,10 @@ class OrdersController < ApplicationController
 	end
 
 	def new
+		@images  = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"]
+     @random_no = rand(5)
+     @random_image = @images[@random_no]
+
 		if @cart.product_items.empty?
 			redirect_to root_url, notice: 'Your Cart is Empty'
 			return

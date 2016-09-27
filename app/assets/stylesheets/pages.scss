@@ -4,29 +4,32 @@
 
 /* INDEX PAGE */
   
-#index_header {
-    background: url('front_bud_full_1200_500.jpg');
-    min-height: 500px;
-    max-width: 100%;
+.index_header {
+  
+    
     background-repeat:no-repeat;
     
     background-size: cover;
     background-position: center top; 
+
+    margin-bottom: 20px;
+
   
-   
+
+
 }
 
 .full_front_img{
-    margin: 40px 0px;
+    margin: 20px 0px;
      background: url('front_img_1200_500.jpg') ;
-    width: 100%;
-   height: auto ; /* ? */
+    width: 100vw;
+   
     background-repeat:no-repeat;
-    background-position: top center;
+    
     background-size: cover;  
     background-position: center top; 
-    height: 520px;
-    vertical-align: text-bottom;
+    
+   
 }   
 
 /* IMAGE CAPTION THUMBMAILS */
@@ -80,7 +83,7 @@
     background-position: top center;
     background-size: cover;  
     background-position: center top; 
-    height: 780px 
+    height: 780px; 
 }
 
 #down_head_about {
@@ -109,6 +112,25 @@
     height: 350px;
     width: 120%;
 
+}
+
+
+/*####### CART ####*/
+
+.cart-container{
+
+    margin-bottom: 20vw;
+
+}
+
+.cart-links{
+    color: #555;
+}
+
+/*###########Location #########*/
+
+.location-wrapp{
+    margin-bottom: 20vw;
 }
 
 

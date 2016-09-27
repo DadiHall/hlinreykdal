@@ -20,9 +20,15 @@ class ApplicationController < ActionController::Base
   end
 
   def find_labels
+    cururl = request.original_url
+      cururl.to_s
+    if cururl.include? "admin"
+      ##Dont run navi code!
+    else
 
     @labels = Label.all
   end
+end
  
  def set_cart
     @cart = Cart.find(session[:cart_id])

@@ -16,16 +16,18 @@ font-size: .9em;
 background-color: transparent;
 } 
 
+/*
 header {
     background: url('../image/front2.jpg') ;
     width: 100%;
-    height: auto ; /* ? */
+    height: auto ; 
     background-repeat:no-repeat;
     background-position: top center;
     background-size: contain;  
     background-position: center top; 
-    height: 720px 
+    height: 720px; 
 }
+*/
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
     color: #555;
