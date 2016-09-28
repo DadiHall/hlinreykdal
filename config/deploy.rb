@@ -4,6 +4,8 @@ lock '3.6.1'
 set :application, 'hlinreykdal'
 set :repo_url, 'git@github.com:DadiHall/hlinreykdal.git'
 
+set :passenger_restart_with_touch, true
+
 #set :rbenv_type, :user # or :system, depends on your rbenv setup
 #set :rbenv_ruby, '2.3.1'
 
