@@ -15,20 +15,7 @@ set :passenger_restart_with_touch, true
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/deploy/hlinreykdal'
 
-# Defaults to [:web]
-set :assets_roles, [:web, :app]
 
-# Defaults to 'assets'
-# This should match config.assets.prefix in your rails config/application.rb
-set :assets_prefix, 'prepackaged-assets'
-
-# If you need to touch public/images, public/javascripts, and public/stylesheets on each deploy
-set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
-
-# Defaults to nil (no asset cleanup is performed)
-# If you use Rails 4+ and you'd like to clean up old assets after each deploy,
-# set this to the number of versions to keep
-set :keep_assets, 2
 
 
 set :linked_files, %w{config/database.yml config/secrets.yml}
