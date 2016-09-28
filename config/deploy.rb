@@ -29,7 +29,7 @@ namespace :deploy do
   end
 
   after :publishing, 'deploy:restart'
-  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+  after :finishing, 'deploy:symlink:shared', 'deploy:compile_assets_locally'
   after :finishing, 'deploy:cleanup'
 end  
 
