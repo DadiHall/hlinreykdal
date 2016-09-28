@@ -24,7 +24,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  RAILS_ENV=production rake assets:precompile
+  RAILS_ENV=production rake assets:precompiled_assets
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
