@@ -53,7 +53,7 @@ gem 'better_errors', '~> 2.1', '>= 2.1.1'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-
+gem 'capistrano-rails-console', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -73,6 +73,6 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv', '~> 2.0', '>= 2.0.4'
   gem 'capistrano-passenger'
-  gem 'capistrano-rails-console', require: false
+  
 end
 
