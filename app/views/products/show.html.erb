@@ -27,7 +27,7 @@
             <% end %>
      </div>
       	<div class="col-xs-12">
-       	 <p> Price: <%= number_to_currency @product.price_usd, :unit => "€" , :precision => 0), class: 'price' %> | <%= number_to_currency(@product.price_isl.to_i, :unit => "IKR" , :precision => 0) %></p>
+       	 <p> Price: <%= number_to_currency (@product.price_usd, :unit => "€" , :precision => 0), class: 'price' %> | <%= number_to_currency(@product.price_isl.to_i, :unit => "IKR" , :precision => 0) %></p>
     	</div>
 
        <%# if @product.stock_quantity >= 1 %>
