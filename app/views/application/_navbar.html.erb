@@ -79,12 +79,12 @@
 
                 <% if @cart.total_price_usd > 0 %>
                     <%= link_to @cart do %> 
-                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa-shopping-cart"> &euro; </i>
                     <%=  @cart.total_price_usd %>
                     <% end %>
 
                     <% else %>
-                        <a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> $0.00</a>
+                        <a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> &euro; 0.00</a>
                     <% end %>    
 
                 </li>
