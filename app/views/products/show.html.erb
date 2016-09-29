@@ -17,14 +17,14 @@
         <p class="price"> Designer: </p>
         <p><%= @product.label.label_name %></p>
 
-            <% if @product.stock_quantity >= 1 %>
-        <p>In stock: <%= @product.stock_quantity %> </p>
+            <%# if @product.stock_quantity >= 1 %>
+       <!-- <p>In stock: <%= @product.stock_quantity %> </p> -->
 
-            <% else %>
+            <%# else %>
 
-            <p> Out of stock </p>
+           <!-- <p> Out of stock </p> -->
 
-            <% end %>
+            <%# end %>
      </div>
       	<div class="col-xs-12">
        	 <p> Price: <%= number_to_currency(@product.price_usd, :unit => "€" , :precision => 0, class: 'price') %> | <%= number_to_currency(@product.price_isl.to_i, :unit => "IKR" , :precision => 0) %></p>
