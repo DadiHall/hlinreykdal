@@ -9,10 +9,10 @@ permit_params :title, :description, :image, :price_usd, :price_isl, :category_id
 		column :label
 		column :created_at
 		
-		column :price_isl, :sortable => :price_isl do |product|
+		column :price_isk, :sortable => :price_isl do |product|
 			number_to_currency product.price_isl
 		end
-		column :price_usd, :sortable => :price_usd do |product|
+		column :price_euro, :sortable => :price_usd do |product|
 			number_to_currency product.price_usd
 		end
 
