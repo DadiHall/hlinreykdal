@@ -87,10 +87,10 @@
                        <!-- <a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> &euro; 0.00</a> -->
                     <%# end %>    
 
-                    <% if @cart.products.count > 0 %>
+                    <% if @cart.product_items.count > 0 %>
                     <%= link_to @cart do %> 
                         <i class="fa fa-shopping-cart"></i>
-                    <%= @cart.products.count %>
+                    <%= @cart.product_items.count %>
                     <% end %>
 
                     <% else %>
