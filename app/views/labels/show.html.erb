@@ -3,7 +3,7 @@
 
   <img src="/assets/rand_headers/<%= @random_image%>", style='height:auto;width:100%;' >
 	
-	<h1 ><%= @label.label_name %></h1>
+	<h1 ><%= @label.name %></h1>
 </header>
 
 
@@ -16,7 +16,7 @@
 <div class="col-lg-3 col-sm-6 col-xs-12 center-block " >
   
   <%= link_to product_path (product) do %>
-   <%= image_tag product.image, height: "300", class: "img-responsive" %>
+   <%= image_tag @product.image.url(:medium), class: "img-responsive"%>
   <% end %>
 
   <div class="product_description">

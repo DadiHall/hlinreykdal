@@ -1,7 +1,7 @@
 ActiveAdmin.register Label do
 
 
-permit_params :label_name
+permit_params :name
 
 
 end
