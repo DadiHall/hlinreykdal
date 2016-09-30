@@ -25,8 +25,8 @@
 
     <p><%= product.description %></p>
     <p>In stock: <%#= product.stock_quantity %> items.</p>
-    <p class="price"> <%= number_to_currency(product.price_usd, :precision => 0 )%> | <%= number_to_currency(product.price_isl.to_i, :unit => "kr", :precision => 0) %></p>
-    <p><%#= social_share_button_tag(products.name) %></p>
+    <p class="price"> <%= number_to_currency(product.price_usd, :unit => "€", :precision => 0 )%> | <%= number_to_currency(product.price_isl.to_i, :unit => "IKR", :precision => 0) %></p>
+    <p><%= social_share_button_tag(product.title) %></p>
 
   </div>
       
