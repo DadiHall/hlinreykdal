@@ -17,7 +17,7 @@ class Product < ActiveRecord::Base
   	 validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   	 def ensure_not_product_item
-  	 	if product_items.empty?
+  	 	if product_item.empty?
   	 		return true
   	 	else
   	 		errors.add(:base, 'You have Product Items')
