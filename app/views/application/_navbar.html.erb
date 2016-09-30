@@ -77,17 +77,29 @@
 
                 <li class="dropdown full-width navbar-right cart-wrapper">
 
-                <% if @cart.total_price_usd > 0 %>
+                <%# if @cart.total_price_usd > 0 %>
+                    <%#= link_to @cart do %> 
+                        <!--<i class="fa fa-shopping-cart"> &euro; </i>-->
+                    <%#=  @cart.total_price_usd %>
+                    <%# end %>
+
+                    <%# else %>
+                       <!-- <a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> &euro; 0.00</a> -->
+                    <%# end %>    
+
+                    <% if @cart.products.count > 0 %>
                     <%= link_to @cart do %> 
-                        <i class="fa fa-shopping-cart"> &euro; </i>
-                    <%=  @cart.total_price_usd %>
+                        <i class="fa fa-shopping-cart"></i>
+                    <%= @cart.products.count %>
                     <% end %>
 
                     <% else %>
-                        <a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> &euro; 0.00</a>
+
+                    <a href="#" class="menu-cart"><i class="fa fa-shopping-cart"></i> 0 </a>
                     <% end %>    
 
                 </li>
+                
                 
 
 
