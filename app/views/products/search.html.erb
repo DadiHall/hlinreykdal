@@ -1,0 +1,37 @@
+
+
+<div class="container">
+<div class="row product_top">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Designer</th>
+      <th>Price</th>
+      <th>Stock</th>
+      <th>Image</th>
+      
+    </tr>
+  </thead>
+
+<tbody>
+  <% @product.each do |product| %>
+    
+      <tr>
+        <td><%= link_to product.title, product %></td>
+        <td><%= product.description %></td>
+        <td><%= product.label.name %></td>
+
+        <td><%#= number_to_currency product.price %></td>
+        <td><%= product.stock_quantity %></td>
+
+        <td><%= image_tag product.image.url(:thumb)%></td>
+      
+ 
+  <% end %>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>

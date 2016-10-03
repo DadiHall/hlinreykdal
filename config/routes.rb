@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'products/search' => 'products#search', as: 'search_products'
+
   resources :categories
   resources :labels
   resources :products do
@@ -8,7 +10,8 @@ Rails.application.routes.draw do
    
    
 
-  resources :carts
+  resources :carts 
+   
   
   resources :orders
 

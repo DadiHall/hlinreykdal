@@ -11,23 +11,21 @@
        
      <div class="product_description">
 
-        <h3><%= @product.title %></h3>
+        <h3 class="title"><%= @product.title %></h3>
         <h4><%#=@product.material %></h4>
         <p><%= @product.description %></p>
         <p class="price"> Designer: </p>
         <p><%= @product.label.name %></p>
 
-            <%# if @product.stock_quantity >= 1 %>
-       <!-- <p>In stock: <%#= @product.stock_quantity %> </p> -->
+            <% if @product.stock_quantity <= 0 %>
+     
 
-            <%# else %>
+       <p> Out of stock </p> 
 
-           <!-- <p> Out of stock </p> -->
-
-            <%# end %>
+            <% end %>
      </div>
       	<div class="col-xs-12">
-       	 <p> Price: <%= number_to_currency(@product.price_usd, :unit => "€" , :precision => 0, class: 'price') %> | <%= number_to_currency(@product.price_isl.to_i, :unit => "IKR" , :precision => 0) %></p>
+       	 <p> Price: <%= number_to_currency(@product.price_usd, :unit => "€ " , :precision => 0, class: 'price') %> | <%= number_to_currency(@product.price_isl.to_i, :unit => "IKR " , :precision => 0) %></p>
     	</div>
 
        <%# if @product.stock_quantity >= 1 %>
@@ -38,9 +36,17 @@
 
           <%# end %>
           <!--<p> <%#= link_to 'Add to cart', product_items_path, method: :post %><i class="fa fa-shopping-cart"></i></p>-->
-          <%= button_to product_product_items_path( @product), class: 'buttons' do %>
+
+          <% if @product.stock_quantity >= 1 %>
+
+          <%= button_to product_product_items_path( @product), class: 'buttons-style' do %>
           <i class="fa fa-shopping-cart"></i>Add to Cart
          <% end %>
+
+         
+
+         <% end %>
+
         </div>
   
    

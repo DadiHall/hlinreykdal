@@ -36,9 +36,26 @@
 	</div>	
 	
 	<div class="form-group">
-		<div class="col-md-10">
+		<div class="col-md-5">
 			<%= f.label :country %>
 			<%= f.country_select :country, { priority_countries: [ "IS", "US", "DE", "ES", "PT" ]}, { class: "form-control" }%>
+		</div>
+
+		<div class="col-md-5">
+		<%# if :country == "Iceland" %>
+
+			<div class="btn-group" data-toggle="buttons-radio">
+  			<%= f.radio_button :city, "ABC", :id=>"first", :style=>"display:none;" %>
+  			<label for="first" class="btn btn-primary">First</label>
+
+  			<%= f.radio_button :city "PQR", :id=>"second", :style=>"display:none;" %>
+  			<label for="second" class="btn btn-primary">Second</label>
+
+  			<%= f.radio_button :city, "MNO", :id=>"third", :style=>"display:none;" %>
+  			<label for="third" class="btn btn-primary">Third</label>
+			</div>
+
+			<%# end %>
 		</div>
 	</div>	
 

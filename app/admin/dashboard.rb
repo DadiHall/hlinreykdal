@@ -7,10 +7,10 @@ ActiveAdmin.register_page "Dashboard" do
         table_for Order.order('created_at DESC').limit(10) do
             column :name
             column :total_price_usd do |order|
-                number_to_currency order.total_price_usd
+                number_to_currency(order.total_price_usd, :unit => "€ " , :precision => 0) 
             end
                 column :total_price_isl do |order|
-                number_to_currency order.total_price_isl
+                number_to_currency(order.total_price_isl, :unit => "ISK " , :precision => 0)
             end
         
         column :created_at do |order|

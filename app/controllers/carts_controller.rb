@@ -18,10 +18,12 @@ class CartsController < ApplicationController
 	def destroy
 		@cart.destroy if @cart.id == session[:cart_id]
 		session[:cart_id] = nil
+		product = Product.find params[:product_id]
+        product.update_columns(stock_quantity: product.stock_quantity + 1)
 		redirect_to root_url, notice: 'Your Cart is Empty'
 	end
 
-
+	
 	private
 
 	def set_cart

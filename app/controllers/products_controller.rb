@@ -6,6 +6,14 @@
 
   	  end
 
+  def search
+    
+    @product = Product.search(params[:query]).order("created_at DESC")
+    @categories = Category.joins(:products).where(:products => {:id => @product.map{|x| x.id }}).distinct
+
+
+  end
+
  	private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
@@ -14,6 +22,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :price_usd, :price_isl, :image, :category_id)
+      params.require(:product).permit(:title, :description, :price_usd, :price_isl, :image, :category_id, :stock_quantity, :label_id, :query)
     end
  end

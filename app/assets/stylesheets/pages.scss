@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+.title{
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
 /* INDEX PAGE */
   
 .index_header {
@@ -51,7 +57,7 @@
 
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
-
+    letter-spacing: .2em;
     
     margin-left: 5%;
     margin-top: 3%;

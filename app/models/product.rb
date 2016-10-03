@@ -2,9 +2,9 @@ class Product < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :label
 
-	has_many :product_item
+	has_many :product_items, :dependent => :destroy
 
-	before_destroy :ensure_not_product_item
+	#before_destroy :ensure_not_product_item
 	
 	
 
@@ -16,13 +16,18 @@ class Product < ActiveRecord::Base
 	 has_attached_file :image, styles: { medium: "500x500#", thumb: "100x100#" }
   	 validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
-  	 def ensure_not_product_item
-  	 	if product_item.empty?
-  	 		return true
-  	 	else
-  	 		errors.add(:base, 'You have Product Items')
-  	 		return false
-  	 	end
+  	 #def ensure_not_product_item
+  	 #	if product_item.empty?
+  	 #		return true
+  	 #	else
+  	 #		errors.add(:base, 'You have Product Items')
+  	 #		return false
+  	 #	end
 
-  	 end
+  	 #end
+
+  	 def self.search(query)
+		
+     where("title LIKE ? OR description LIKE ?", "%#{query}%", "%#{query}%") 
+    end
 end

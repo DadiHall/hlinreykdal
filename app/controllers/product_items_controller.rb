@@ -2,7 +2,7 @@ class ProductItemsController < ApplicationController
 
 	include CurrentCart
 
-	before_action :set_cart, only: [:create]
+	before_action :set_cart, only: [:create, :destroy]
 	before_action :set_product_item, only: [:show, :destroy]
 
 	def create
@@ -11,9 +11,27 @@ class ProductItemsController < ApplicationController
 		@product_item = @cart.add_product(@product.id)
 		if @product_item.save
 			redirect_to root_url, notice:'Product added to Cart'
+			product = Product.find params[:product_id]
+			product.update_columns(stock_quantity: product.stock_quantity - 1)
 		else
 			render :new
 		end
+	end
+
+
+	def destroy
+
+		@product = Product.find(params[:product_id])
+		@product_item = @cart.remove_product(@product.id)
+		if @product_item.destroy
+			redirect_to root_url, notice:'Product deleted from Cart'
+			product = Product.find params[:product_id]
+			product.update_columns(stock_quantity: product.stock_quantity + 1)
+		else
+			render :new
+		end
+
+
 	end
 
 	private
