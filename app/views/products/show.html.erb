@@ -12,10 +12,12 @@
      <div class="product_description">
 
         <h3 class="title"><%= @product.title %></h3>
+        <p class="price"> Label: <%= @product.label.name %></p>
+        
         <h4><%#=@product.material %></h4>
         <p><%= @product.description %></p>
-        <p class="price"> Designer: </p>
-        <p><%= @product.label.name %></p>
+        
+       
 
             <% if @product.stock_quantity <= 0 %>
      

@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
 
 	before_action :set_cart, only: [:show, :destroy]
-	rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
+	#rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
 	def new
 		@cart = Cart.new
@@ -15,13 +15,23 @@ class CartsController < ApplicationController
 	end
 
 
+	#def destroy
+	#	@cart.destroy if @cart.id == session[:cart_id]
+	#	session[:cart_id] = nil
+	#	product = Product.find params[:product_id]
+     #   product.update_columns(stock_quantity: product.stock_quantity + 1)
+	#	redirect_to root_url, notice: 'Your Cart is Empty'
+	#end
+
 	def destroy
-		@cart.destroy if @cart.id == session[:cart_id]
-		session[:cart_id] = nil
-		product = Product.find params[:product_id]
-        product.update_columns(stock_quantity: product.stock_quantity + 1)
-		redirect_to root_url, notice: 'Your Cart is Empty'
-	end
+      if @cart.id == session[:cart_id]
+        @cart.product_items.each do |product_item|
+          product_item.product.update_columns(stock_quantity: product_item.product.stock_quantity + 1)
+       end
+       @cart.destroy
+       redirect_to root_url, notice: 'Your Cart is Empty'
+      end
+    end
 
 	
 	private
