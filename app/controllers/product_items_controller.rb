@@ -5,6 +5,10 @@ class ProductItemsController < ApplicationController
 	before_action :set_cart, only: [:create, :destroy]
 	before_action :set_product_item, only: [:show, :destroy]
 
+	def index
+		redirect_to root_url, notice:'Product added to Cart'
+	end
+
 	def create
 		
 		@product = Product.find(params[:product_id])

@@ -24,6 +24,7 @@
 @import "footer";
 @import "navbar";
 @import "pages";
+@import "products";
 
 
 
@@ -45,15 +46,6 @@ body{
     margin: 0;
   background-color: #fff;
     text-decoration: none;
-
-}
-
-
-.buttons-style{
-    border: #555 2px solid;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding-right: 50px;
 
 }
 
@@ -186,4 +178,71 @@ input.transparent-input {
 iframe#braintree-dropin-frame{
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+
+/* ######SITE-NOTIFICATIONS##### */
+
+
+#site-notification {
+    position: fixed;
+    bottom: 0px;
+    padding: 6px 12px;
+    padding-right: 28px;
+    font-size: 12px;
+    z-index: 10;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #292929;
+    background-color: #eeeeee;
+    background-color: rgba(240, 240, 240, 0.96);
+    cursor: pointer; cursor: hand; 
+}
+
+#site-notification button.close {
+    content: '';
+    display: block;
+    text-indent: -99999px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 16px;
+    height: 16px;
+    background-image: url('icons/close-dark.svg');
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    width: 12px;
+    height: 12px;
+    margin-top: -6px;
+    opacity: .25;
+    cursor: pointer;
+}
+
+button.close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000000;
+    text-shadow: 0 1px 0 #ffffff;
+    opacity: 0.2;
+    
+}
+
+.postlist-text{
+text-transform: uppercase;
+    font-size: .9em;
+    padding-left: 20px;
+
 }

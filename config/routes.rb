@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'products/search' => 'products#search', as: 'search_products'
-
+  post 'emaillist/subscribe' => 'emaillist#subscribe'
   resources :categories
   resources :labels
   resources :products do

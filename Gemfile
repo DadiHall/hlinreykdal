@@ -40,6 +40,8 @@ gem 'toastr-rails'
 
 gem 'braintree'
 
+gem 'gibbon', :git => 'https://github.com/amro/gibbon.git'
+
 gem 'figaro'
 
 gem 'country_select'

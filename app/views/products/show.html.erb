@@ -1,6 +1,6 @@
 
 
-<div class="row product_top">
+<div class="row product_top text-center">
     
     <div class="container">
 	 
@@ -12,10 +12,11 @@
      <div class="product_description">
 
         <h3 class="title"><%= @product.title %></h3>
-        <p class="price"> Label: <%= @product.label.name %></p>
-        
-        <h4><%#=@product.material %></h4>
-        <p><%= @product.description %></p>
+        <p class="label-product"><%= @product.label.name %></p>
+
+        <p class="description">Description</p>
+               
+        <p class="product-description"><%= @product.description %></p>
         
        
 
@@ -27,29 +28,19 @@
             <% end %>
      </div>
       	<div class="col-xs-12">
-       	 <p> Price: <%= number_to_currency(@product.price_usd, :unit => "€ " , :precision => 0, class: 'price') %> | <%= number_to_currency(@product.price_isl.to_i, :unit => "IKR " , :precision => 0) %></p>
+       	 <p class="product-price"> Price:</p> <%= number_to_currency(@product.price_usd, :unit => "€ " , :precision => 0) %> | <%= number_to_currency(@product.price_isl.to_i, :unit => "IKR " , :precision => 0) %>
     	</div>
 
        <%# if @product.stock_quantity >= 1 %>
-    	<div class="row add_to_cart">	
-        	<p><%#= link_to 'Add to cart', add_cart_path, method: :post %></p>
-          <%# else %>
-          <!--<p> Out of stock </p>-->
-
-          <%# end %>
-          <!--<p> <%#= link_to 'Add to cart', product_items_path, method: :post %><i class="fa fa-shopping-cart"></i></p>-->
-
+    	<div class="row text-center add-cart-wrapper">	
+        	
           <% if @product.stock_quantity >= 1 %>
 
-          <%= button_to product_product_items_path( @product), class: 'buttons-style' do %>
-          <i class="fa fa-shopping-cart"></i>Add to Cart
-         <% end %>
-
-         
+          <%= link_to 'Add to Cart', product_product_items_path(@product), :method => :post, class: 'add-to-cart'%>
 
          <% end %>
 
-        </div>
+       </div>
   
    
     </div>
@@ -67,4 +58,11 @@
   </div>  
   
 </div>
+
+
+
+<%#= button_to product_product_items_path( @product), class: 'buttons-style' do %>
+          <!--<i class="fa fa-shopping-cart"></i>Add to Cart-->
+         <%# end %>
+
 
