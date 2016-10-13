@@ -38,28 +38,43 @@
 	<div class="form-group">
 		<div class="col-md-5">
 			<%= f.label :country %>
-			<%= f.country_select :country, { priority_countries: [ "IS", "US", "DE", "ES", "PT" ]}, { class: "form-control" }%>
+			<%= f.country_select :country, { priority_countries: [ "IS", "US", "DE", "ES", "PT" ]}, { class: "form-control" } %>
 		</div>
 
-		<div class="col-md-5">
-		<%# if :country == "Iceland" %>
-
-			<div class="btn-group" data-toggle="buttons-radio">
-  			<%= f.radio_button :city, "ABC", :id=>"first", :style=>"display:none;" %>
-  			<label for="first" class="btn btn-primary">First</label>
-
-  			<%= f.radio_button :city "PQR", :id=>"second", :style=>"display:none;" %>
-  			<label for="second" class="btn btn-primary">Second</label>
-
-  			<%= f.radio_button :city, "MNO", :id=>"third", :style=>"display:none;" %>
-  			<label for="third" class="btn btn-primary">Third</label>
-			</div>
-
-			<%# end %>
-		</div>
 	</div>	
+		
+		<br>
+	
+		<div class="row">
 
+		<div class="col-md-5" id="country_div">
 
+    <li><%= f.radio_button :pick_up, true %></li>
+    <li><%= f.label :pick_up, "Sækja pöntun í verslun á Fiskislóð 75, 101 Reykjavík", :value => "true"  %></li>
+    
+    
+    <li><%= f.radio_button :delivery, false, :checked => true %></li>
+    <li><%= f.label :delivery, "Fá pöntun senda heim að dyrum með Íslandspósti. Ef verslað er fyrir meira en 15.000 kr. fellur sendingarkostnaður niður.", :value => "false" %></li>
+   
+  </div> 	
+
+  <div class="col-md-5">
+
+  <table style="width:100%" >
+  <tr>
+    <th><p>Products Total: </p></th>
+    <th><p>Delivery Cost: </p></th>
+    <th><p>Total Cost: </p></th>
+  </tr>
+  <tr>
+    <td><p><%= @cart.total_price_usd %></p></td>
+    <td><p><%= @del_cost_euro %> </p></td>
+    <td><%= @cart.total_price_usd + @del_cost_euro %></td>
+  </tr>
+</table>
+  </div>
+  	</div>
+	</div>	
 
 	<div class="form-group">
 	
@@ -67,7 +82,7 @@
 		
 		<div class="col-md-10">
 			<br>
-			<%= f.submit 'Place Order', class: 'buttons' %>
+			<%= f.submit 'Place Order', class: 'add-to-cart' %>
 		
 		</div>
 	</div>	
@@ -75,3 +90,18 @@
 
 	</div>
 <% end %>
+
+
+
+<script>
+	
+
+
+window.onload = function() {
+  $("#order_country").change(function() {
+    var val = $(this).val();
+    $("#country_div").toggle(val == "IS");
+  });
+};
+
+</script>

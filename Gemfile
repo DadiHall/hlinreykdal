@@ -30,6 +30,8 @@ gem 'social-share-button'
 
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'ckeditor', github: 'galetahub/ckeditor'
+
 gem 'devise'
 
 gem 'font-awesome-rails'

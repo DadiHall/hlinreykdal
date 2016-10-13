@@ -20,6 +20,8 @@ class OrdersController < ApplicationController
 		end
 		@order = Order.new
 		@client_token = Braintree::ClientToken.generate
+
+		@del_cost_euro = 20
 	end
 
 	def create
@@ -61,7 +63,7 @@ class OrdersController < ApplicationController
 	end
 
 	def order_params
-		params.require(:order).permit(:name, :email, :address, :city, :country)
+		params.require(:order).permit(:name, :email, :address, :city, :country, :pick_up, :delivery)
 	end
 
 	def charge

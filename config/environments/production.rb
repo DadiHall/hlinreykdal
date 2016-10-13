@@ -83,7 +83,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   
-  config.action_mailer.default_url_options = { host: '138.68.150.155/'}
+  config.action_mailer.default_url_options = { host: '138.68.150.155'}
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
@@ -92,7 +92,7 @@ Rails.application.configure do
     user_name: ENV["SMTP_USER"],
     password: ENV["SMTP_PASSWORD"],
     domain: "hlinreykdal.com",
-    port: 587,
+    port: 465,
     authentication: :login,
     enable_starttls_auto: true
   }

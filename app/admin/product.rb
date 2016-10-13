@@ -17,7 +17,24 @@ permit_params :title, :description, :stock_quantity, :image, :price_usd, :price_
 			number_to_currency(product.price_usd, :unit => "€ " , :precision => 0)
 		end
 
-		actions
+		actions	
+		
 	end
+
+	form do |f|
+  			f.inputs do
+    		f.input :title
+   			f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } }
+   			f.input :stock_quantity
+   			f.input :image
+   			f.input :price_usd
+   			f.input :price_isl
+   			f.input :category_id
+   			f.input :label_id
+  			end
+  			actions	
+		  end
+
+
 
 end

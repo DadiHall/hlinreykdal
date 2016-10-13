@@ -18,6 +18,14 @@ GIT
       sprockets (< 4.1)
 
 GIT
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 43cf1f00e86c19a8071d10e7f1440963a613515f
+  specs:
+    ckeditor (4.2.1)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
+GIT
   remote: https://github.com/amro/gibbon.git
   revision: 7632bad9816c481f61173f9aa9429d0af37d9798
   specs:
@@ -301,6 +309,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rails-console
   capistrano-rbenv (~> 2.0, >= 2.0.4)
+  ckeditor!
   coffee-rails (~> 4.1.0)
   country_select
   devise

@@ -16,6 +16,7 @@
 //= require toastr
 //= require turbolinks
 //= require social-share-button
+//= require ckeditor/init
 //= require_tree .
 
 $(document).ready(function () {
@@ -32,4 +33,5 @@ $(function() {
     toggleNav();
   });
 });
+
 

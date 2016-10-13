@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   get 'products/search' => 'products#search', as: 'search_products'
   post 'emaillist/subscribe' => 'emaillist#subscribe'
   resources :categories
