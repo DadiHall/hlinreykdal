@@ -50,7 +50,9 @@ gem 'country_select'
 
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
 
+gem 'friendly_id', '~> 5.1'
 
+gem "jquery-fileupload-rails"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

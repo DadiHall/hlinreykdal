@@ -4,6 +4,9 @@ class Product < ActiveRecord::Base
 
 	has_many :product_items, :dependent => :destroy
 
+	 extend FriendlyId
+     friendly_id :title, use: [:slugged, :finders]
+
 	#before_destroy :ensure_not_product_item
 	
 	

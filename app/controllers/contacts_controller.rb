@@ -4,6 +4,7 @@ class ContactsController < ApplicationController
 	before_action :set_cart, only: [:new, :create]
 	
 	def new
+		@meta_title ="Hlín Reykdal Contact"
 		@contact = Contact.new
 		@images  = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"]
      	@random_no = rand(5)

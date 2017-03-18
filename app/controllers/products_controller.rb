@@ -3,6 +3,8 @@
 
 
  	  def show
+      @meta_title = "Hlín Reykdal #{@product.title}"
+      @meta_description = @product.description
 
   	  end
 
@@ -22,6 +24,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :price_usd, :price_isl, :image, :category_id, :stock_quantity, :label_id, :query)
+      params.require(:product).permit(:title, :description, :price_usd, :price_isl, :image, :category_id, :stock_quantity, :label_id, :query, :slug)
     end
  end

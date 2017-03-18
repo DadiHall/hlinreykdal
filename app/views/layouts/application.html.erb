@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hlín Reykdal</title>
+  <title><%= @meta_title %></title>
+  <meta name="description" content="<%= @meta_description %>">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'https://js.braintreegateway.com/js/braintree-2.27.0.min.js' %>

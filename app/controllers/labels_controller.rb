@@ -6,6 +6,7 @@ class LabelsController < ApplicationController
   end
 
    def show
+    @meta_title = "Hlín Reykdal - #{@label.name}"
   	@products = @label.products
      @images  = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg"]
      @random_no = rand(5)

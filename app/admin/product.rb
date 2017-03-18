@@ -1,10 +1,11 @@
 ActiveAdmin.register Product do
 
 
-permit_params :title, :description, :stock_quantity, :image, :price_usd, :price_isl, :category_id, :label_id
+permit_params :title, :slug, :description, :stock_quantity, :image, :price_usd, :price_isl, :category_id, :label_id
 
 	index do
 		column :title
+		column :slug
 		column :category
 		column :label
 		column :created_at
@@ -21,18 +22,19 @@ permit_params :title, :description, :stock_quantity, :image, :price_usd, :price_
 		
 	end
 
-	form do |f|
-  			f.inputs do
+	form multipart: true do |f|
+  			f.inputs "Product Details" do
     		f.input :title
+    		f.input :slug
    			f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'Full' } }
    			f.input :stock_quantity
-   			f.input :image
+   			f.input :image, required: false
    			f.input :price_usd
    			f.input :price_isl
-   			f.input :category_id
-   			f.input :label_id
+   			f.input :category
+   			f.input :label
   			end
-  			actions	
+  			f.actions	
 		  end
 
 

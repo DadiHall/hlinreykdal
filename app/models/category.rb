@@ -3,6 +3,9 @@ class Category < ActiveRecord::Base
 
 	
 	has_many :products, :dependent => :nullify
+
+	 extend FriendlyId
+     friendly_id :name, use: [:slugged, :finders]
 	
 	#private
 
