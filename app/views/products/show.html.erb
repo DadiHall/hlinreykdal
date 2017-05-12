@@ -1,10 +1,10 @@
 
 
-<div class="row product_top text-center">
+
     
     <div class="container">
 	 
-    
+    <div class="row product_top text-center">
 
     <div class="col-xs-12 col-sm-6 center-block">
     
@@ -48,16 +48,35 @@
       
    <div class="col-xs-12 col-sm-6 center-block" >
     
-  <%= image_tag @product.image.url(:medium), class: "img-responsive"  %>
-
-  
+  <%= image_tag @product.image.url(:medium), class: "img-responsive center-block"  %>
 
   </div>
- 
+
+
 
   </div>  
   
-</div>
+
+
+  <div class="row product-teaser">
+
+  <h4 class="text-center teaser-text"> Customers who bought <%= @product.title %> , also bought following products: </h4>
+   <% @products.each do |product| %>
+      <div class="col-sm-2 col-xs-3 center-block product-thumbs-product-view" >
+
+  <%= link_to product_path (product) do %>
+                <%= image_tag product.image.url, :size => "100%x100%", class: "img-responsive center-block" %>
+            <% end %>
+
+          <h5 class="text-center"><%= link_to product.title, product, class: "text-center" %></h5>
+
+      </div>
+    <% end %>
+
+  </div>
+
+   </div>  
+
 
 
 

@@ -3,9 +3,10 @@
 
 
  	  def show
+      offset = rand(2)
       @meta_title = "Hlín Reykdal #{@product.title}"
       @meta_description = @product.description
-
+      @products = Product.offset(offset).limit(6)
   	  end
 
   def search
@@ -26,4 +27,6 @@
     def product_params
       params.require(:product).permit(:title, :description, :price_usd, :price_isl, :image, :category_id, :stock_quantity, :label_id, :query, :slug)
     end
+
+  
  end
