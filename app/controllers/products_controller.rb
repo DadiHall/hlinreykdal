@@ -3,7 +3,7 @@
 
 
  	  def show
-      offset = rand(2)
+      offset = rand(100)
       @meta_title = "Hlín Reykdal #{@product.title}"
       @meta_description = @product.description
       @products = Product.offset(offset).limit(6)
