@@ -30,6 +30,10 @@ gem 'social-share-button'
 
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'activeadmin-sortable'
+
+gem 'acts_as_list'
+
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
 gem 'devise'

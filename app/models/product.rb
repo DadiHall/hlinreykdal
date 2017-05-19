@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+	acts_as_list :scope => [:category, :label]
 	belongs_to :category
 	belongs_to :label
 
