@@ -10,15 +10,15 @@ ActiveAdmin.register Order do
 	show do |order|
 
 		panel 'Customer Details' do
-			attributes_table_for order, :name, :email, :address, :city, :country, :created_at
+			attributes_table_for order, :name, :email, :address, :city, :country
 		end
 
-		panel 'Created ' do
+		panel 'Created' do
 			"#{time_ago_in_words order.created_at} ago"
 		end
 
 
-		panel 'Shipped ' do
+		panel 'Shipped' do
 			order.shipped
 		end
 
