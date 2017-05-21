@@ -92,7 +92,7 @@ Rails.application.configure do
     user_name: ENV["SMTP_USER"],
     password: ENV["SMTP_PASSWORD"],
     domain: "hlinreykdal.com",
-    port: 587,
+    port: 465,
     authentication: :login,
     enable_starttls_auto: true
   }
