@@ -10,6 +10,7 @@ class OrderNotifier < ApplicationMailer
 
   
   def shipped(order)
+  	 Rails.logger.info "SMTP_ADDR: #{ENV["SMTP_ADDRESS"].inspect}"
    @order = order
 
     mail to: order.email, subject: 'Order Shipped'
