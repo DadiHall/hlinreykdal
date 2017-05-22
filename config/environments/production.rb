@@ -96,7 +96,8 @@ Rails.application.configure do
     authentication: :login,
     enable_starttls_auto: true
   }
-
+    Rails.logger.info "SMTP_ADDR: #{ENV["SMTP_ADDRESS"].inspect}"
+    
     Braintree::Configuration.environment = :production
     Braintree::Configuration.merchant_id = ENV['merchant_id']
     Braintree::Configuration.public_key = ENV['public_key']

@@ -9,7 +9,7 @@ ActiveAdmin.register Order do
 
 	show do |order|
 
-		Rails.logger.info "SMTP_ADDR: #{ENV["SMTP_ADDRESS"].inspect}"
+		
 
 		panel 'Customer Details' do
 			attributes_table_for order, :name, :email, :address, :city, :country
