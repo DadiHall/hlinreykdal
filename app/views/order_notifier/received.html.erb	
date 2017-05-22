@@ -1,4 +1,4 @@
-<h1>We Received Your Order</h1>
+	<h1>We Received Your Order</h1>
 
 <h3>Dear <%= @order.name %> </h3>
 
