@@ -6,7 +6,7 @@
       offset = rand(100)
       @meta_title = "Hlín Reykdal #{@product.title}"
       @meta_description = @product.description
-      @products = Product.offset(offset).limit(6)
+    @products_rand = Product.where(category_id: @product.category_id).order("RANDOM()").limit(6)
   	  end
 
   def search

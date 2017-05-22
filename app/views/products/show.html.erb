@@ -61,7 +61,7 @@
   <div class="row product-teaser">
 
   <h4 class="text-center teaser-text"> Customers who bought <%= @product.title %> , also bought following products: </h4>
-   <% @products.each do |product| %>
+   <% @products_rand.each do |product| %>
       <div class="col-sm-2 col-xs-3 center-block product-thumbs-product-view" >
 
   <%= link_to product_path (product) do %>
