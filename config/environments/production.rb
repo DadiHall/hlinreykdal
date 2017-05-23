@@ -52,7 +52,7 @@ Rails.application.configure do
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.logger = ActiveSupport::Logger.new('/tmp/foo.log') 
-  config.logger.debug "SMTP_ADDR: #{ENV["SMTP_ADDRESS"].inspect}"
+  config.logger.info "SMTP_ADDR: #{ENV["SMTP_ADDRESS"].inspect}"
 
 
   # Prepend all log lines with the following tags.
