@@ -24,7 +24,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  config.logger = ActiveSupport::Logger.new('/tmp/foo.log') and config.logger.info "SMTP_ADDR: #{ENV["SMTP_ADDRESS"].inspect}"
+ 
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -51,7 +51,8 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :debug
+  config.logger = ActiveSupport::Logger.new('/tmp/foo.log') 
+  config.logger.info "SMTP_ADDR: #{ENV["SMTP_ADDRESS"].inspect}"
 
 
   # Prepend all log lines with the following tags.
