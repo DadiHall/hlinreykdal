@@ -15,6 +15,7 @@
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
 //= require bootstrap-sprockets
+//= require bootstrap/affix
 //= require toastr
 //= require turbolinks
 //= require social-share-button

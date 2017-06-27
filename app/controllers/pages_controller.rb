@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   
 include CurrentCart
-before_action :set_cart, only: [:index, :about, :help, :location]
+before_action :set_cart, only: [:index, :about, :help, :location, :terms, :privacy]
   def index
         @meta_title ="Hlín Reykdal Concept Store"
         @meta_description = "Hlín Reykdal Consept store - Icelandic Design"
