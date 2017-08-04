@@ -5,7 +5,7 @@ ActiveAdmin.register Product do
 
   sortable # creates the controller action which handles the sorting
 
-permit_params :title, :slug, :description, :stock_quantity, :image, :price_usd, :price_isl, :category_id, :label_id
+permit_params :title, :slug, :description, :stock_quantity, :image, :price_usd, :price_isl, :category_id, :label_id,  images_attributes: [:image , :id , :_destroy]
 
 	index do
 		 sortable_handle_column # inserts a drag handle
@@ -38,9 +38,18 @@ permit_params :title, :slug, :description, :stock_quantity, :image, :price_usd, 
    			f.input :price_isl
    			f.input :category
    			f.input :label
+
+   				
+      			f.has_many :images , heading: false, allow_destroy: true do |ff|
+        		ff.input :image, required: true, as: :file
+      		     end
+    	     
   			end
+
   			f.actions	
-		  end
+
+  			
+    end
 
 
 

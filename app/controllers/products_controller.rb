@@ -3,10 +3,11 @@
 
 
  	  def show
+
       offset = rand(100)
       @meta_title = "Hlín Reykdal #{@product.title}"
       @meta_description = @product.description
-    @products_rand = Product.where(category_id: @product.category_id).order("RANDOM()").limit(6)
+      @products_rand = Product.where(category_id: @product.category_id).order("RANDOM()").limit(6)
   	  end
 
   def search
@@ -25,7 +26,7 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:title, :description, :price_usd, :price_isl, :image, :category_id, :stock_quantity, :label_id, :query, :slug)
+      params.require(:product).permit(:title, :description, :price_usd, :price_isl, :image, :category_id, :stock_quantity, :label_id, :query, :slug, images_attributes: [:image , :id , :_destroy])
     end
 
   

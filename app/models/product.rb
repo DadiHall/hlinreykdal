@@ -3,7 +3,11 @@ class Product < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :label
 
+	has_many :images
+	accepts_nested_attributes_for :images
 	has_many :product_items, :dependent => :destroy
+
+
 
 	 extend FriendlyId
      friendly_id :title, use: [:slugged, :finders]
@@ -15,10 +19,8 @@ class Product < ActiveRecord::Base
 		validates :title, :description, presence: true
 		validates :price_usd, :price_isl, numericality: {greater_than_or_equal_to: 0.01}
 		validates :title, uniqueness: true
-		
+	
 
-	 has_attached_file :image, styles: { medium: "500x500#", thumb: "100x100#" }
-  	 validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   	 #def ensure_not_product_item
   	 #	if product_item.empty?

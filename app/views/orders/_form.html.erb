@@ -47,32 +47,63 @@
 	
 		<div class="row">
 
-		<div class="col-md-5" id="country_div">
+		<div class="col-md-5 pick-up-buttons" id="country_div">
 
-    <!--<li><%#= f.radio_button :pick_up, true %></li>
-    <li><%#= f.label :pick_up, "Sækja pöntun í verslun á Fiskislóð 75, 101 Reykjavík", :value => "true"  %></li>
+		
+
+		<li><%= f.radio_button :pick_up, "1", checked: false, data: { question: "Sækja pöntun í verslun á Fiskislóð 75, 101 Reykjavík" } %> 
+
+		<%= f.label :pick_up, "Sækja pöntun í verslun á Fiskislóð 75, 101 Reykjavík" %></li>
+
+         <li><%= f.radio_button :pick_up, "0", checked: true,  data: { question: "Fá pöntun senda heim að dyrum með Íslandspósti. Ef verslað er fyrir meira en 15.000 kr. fellur sendingarkostnaður niður." } %> 
+
+         <%= f.label :pick_up, "Fá pöntun senda heim að dyrum með Íslandspósti. Ef verslað er fyrir meira en 15.000 kr. fellur sendingarkostnaður niður." %></li>
+
     
-    
-    <li><%#= f.radio_button :delivery, false, :checked => true %></li>
-    <li><%#= f.label :delivery, "Fá pöntun senda heim að dyrum með Íslandspósti. Ef verslað er fyrir meira en 15.000 kr. fellur sendingarkostnaður niður.", :value => "true" %></li> -->
    
   </div> 	
 
-  <div class="col-md-5">
+  <div class="col-md-5" id="delivery">
 
   <table style="width:100%" >
+
+  <% if @cart.total_price_usd + @del_cost_euro <= 145 %>
   <tr>
     <th><p>Products Total: </p></th>
     <th><p>Delivery Cost: </p></th>
     <th><p>Total Cost: </p></th>
   </tr>
   <tr>
+ 
     <td><p><%= @cart.total_price_usd %></p></td>
+
     <td><p><%= @del_cost_euro %> </p></td>
     <td><%= @cart.total_price_usd + @del_cost_euro %></td>
+
   </tr>
 </table>
+  <% else %>
+  <table style="width:100%" >
+<p>No delivery cost</p>
+   <tr>
+    <th><p>Products Total: </p></th>
+    
+    <th><p>Total Cost: </p></th>
+  </tr>
+  <tr>
+ 
+    <td><p><%= @cart.total_price_usd %></p></td>
+
+    <td><p><%= @del_cost_euro %> </p></td>
+
+  </tr>
+
+<% end %>
+
+</table>
   </div>
+
+
   	</div>
 	</div>	
 
@@ -103,5 +134,5 @@ window.onload = function() {
     $("#country_div").toggle(val == "IS");
   });
 };
-
 </script>
+

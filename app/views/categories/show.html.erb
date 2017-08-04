@@ -15,9 +15,11 @@
     <% @products.each do |product| %>
       <div class="col-lg-3 col-sm-6 col-xs-12 center-block " >
 
-  <%= link_to product_path (product) do %>
-                <%= image_tag product.image.url(:medium), class: "img-responsive" %>
-            <% end %>
+      <%= link_to product_path (product) do %>
+              <% if product.images.first %>
+                <%= image_tag product.images.first.image.url(:medium), class: "img-responsive" %>
+              <% end %>
+      <% end %>
 
         <div class="product_description">
 

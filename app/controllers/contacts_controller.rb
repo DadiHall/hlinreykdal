@@ -14,6 +14,7 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new(contact_params)
 		if @contact.save
+			
 			redirect_to root_url, notice: 'Thank You for Your Message'
 		else
 		  render :new

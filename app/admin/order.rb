@@ -24,6 +24,10 @@ ActiveAdmin.register Order do
 			order.shipped
 		end
 
+		panel 'delivery' do
+			order.pick_up
+		end
+
 		panel 'Order Details' do
 			table_for(order.product_items) do 
 				column 'Product' do |item|
