@@ -113,7 +113,7 @@
       <div class="col-sm-2 col-xs-3 center-block product-thumbs-product-view" >
 
   <%= link_to product_path (product) do %>
-                <%= image_tag @product.images.sample.image.url, :size => "100%x100%", class: "img-responsive center-block" %>
+                <%= image_tag @product.images.sample.image.url(:medium), :size => "100%x100%", class: "img-responsive center-block" %>
             <% end %>
 
           <h5 class="text-center"><%= link_to product.title, product, class: "text-center" %></h5>
