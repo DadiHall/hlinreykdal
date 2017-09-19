@@ -3,6 +3,8 @@ class Label < ActiveRecord::Base
 
 	has_many :products, :dependent => :nullify
 	has_many :pages
+	has_many :images
+	accepts_nested_attributes_for :images
 
   #private
 
