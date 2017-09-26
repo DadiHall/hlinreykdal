@@ -18,7 +18,7 @@ class OrderNotifier < ApplicationMailer
   	
    @order = order
 
-    mail to: order.email, subject: 'Order Shipped'
+    mail (to: order.email, subject: 'Order Shipped')
   end
 
 
