@@ -1,11 +1,11 @@
 class OrderNotifier < ApplicationMailer
 
-  default from: 'Hlín Reykdal Concept Store <hlin@hlinreykdal.com>',
+  default from: 'Hlín Reykdal Concept Store <hlin@hlinreykdal.com>'
 
   def received(order)
     @order = order
 
-    mail (to: order.email, subject: 'Hlín Reykdal Concept Store' 
+    mail (to: order.email, subject: 'Hlín Reykdal Concept Store', 
       bcc: %w[
               hlin@hlinreykdal.com
             ]
