@@ -5,11 +5,7 @@ class OrderNotifier < ApplicationMailer
   def received(order)
     @order = order
 
-    mail (to: order.email, subject: 'Hlin Reykdal Concept Store', 
-      bcc: %w[
-              hlin@hlinreykdal.com
-            ]
-            )
+    mail (to: order.email, subject: 'Hlin Reykdal Concept Store')
     
   end
 
