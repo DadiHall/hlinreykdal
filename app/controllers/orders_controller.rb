@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
 				@order.add_product_items_from_cart(@cart)
 			Cart.destroy(session[:cart_id])
 			session[:cart_id] = nil
-			OrderNotifier.received(@order).deliver 
+			#OrderNotifier.received(@order).deliver 
 			redirect_to root_url, notice: 'Thank You for Your Order'
 			else
 				flash[:error] = 'Please Check Your Cart'
