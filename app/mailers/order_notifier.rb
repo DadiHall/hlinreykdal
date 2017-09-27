@@ -5,7 +5,7 @@ class OrderNotifier < ApplicationMailer
   def received(order)
     @order = order
 
-    mail (to: order.email, subject: 'Hlin Reykdal Concept Store')
+    mail to: order.email, subject: 'Hlin Reykdal Concept Store'
     
   end
 
@@ -14,9 +14,6 @@ class OrderNotifier < ApplicationMailer
   	
    @order = order
 
-    mail (to: order.email, subject: 'Order Shipped')
+    mail to: order.email, subject: 'Order Shipped'
   end
-
-
-  
 end
