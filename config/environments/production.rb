@@ -51,10 +51,15 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :info
+  #config.log_level = :info
 
-  config.logger = ActiveSupport::Logger.new('tmp/foo.log') 
-  config.logger.info "SMTP_ADDR: #{ENV["SMTP_ADDRESS"].inspect}"
+  #config.logger = ActiveSupport::Logger.new('/tmp/foo.log') 
+  #config.logger.info "SMTP_ADDR: #{ENV["SMTP_ADDRESS"].inspect}"
+
+  # Configure logger to log warn and above
+  config.log_level = :warn
+  config.log_tags = ["cv-#{Rails.env[0]}"]
+  config.logger = ActiveSupport::TaggedLogging.new(ActiveSupport::Logger.new(File.join(Rails.root, "log", "#{Rails.env}.log")))
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
