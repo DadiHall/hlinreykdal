@@ -53,7 +53,7 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :info
 
-  config.logger = ActiveSupport::Logger.new('/tmp/foo.log') 
+  config.logger = ActiveSupport::Logger.new('tmp/foo.log') 
   config.logger.info "SMTP_ADDR: #{ENV["SMTP_ADDRESS"].inspect}"
 
   # Prepend all log lines with the following tags.
