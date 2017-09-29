@@ -15,9 +15,9 @@
       					<div class="col-lg-4 col-sm-6 col-xs-12 center-block " >
       				
 						<%= link_to category_path (category), { :method => 'GET' } do %>
-  							<% if product.images.first %>
-  <%= image_tag product.images.first.image.url(:medium), class: "img-responsive" %>
-<% end %>
+  							<% if product.images.last %>
+            <%= image_tag product.images.last.image.url(:medium), class: "img-responsive" %>
+          <% end %>
 						<% end %>
  				<div class="caption">
  					<p class="category-name" ><%= product.category.name %></p>
