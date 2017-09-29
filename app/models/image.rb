@@ -1,6 +1,6 @@
 class Image < ActiveRecord::Base
 
-	  belongs_to :product
+	  belongs_to :product, touch: true
 	  belongs_to :label
 	  has_many :product_items, :dependent => :destroy
 
