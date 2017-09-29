@@ -114,7 +114,7 @@
 
   <%= link_to product_path (product) do %>
     <% if product.images.first %>
-                <%= image_tag @product.images.first.image.url(:medium), :size => "100%x100%", class: "img-responsive center-block" %>
+                <%= image_tag product.images.first.image.url(:medium), :size => "100%x100%", class: "img-responsive center-block" %>
         <% end %>        
             <% end %>
 

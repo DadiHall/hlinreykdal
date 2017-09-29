@@ -8,7 +8,7 @@
       @meta_title = "Hlín Reykdal #{@product.title}"
       @meta_description = @product.description
       @products_rand = Product.where(category_id: @product.category_id).order("RANDOM()").limit(6)
-  	  end
+     end
 
   def search
     
